@@ -80,7 +80,8 @@ class SpectralAnalysis(object):
         '''
         #make default nperseg len(ts)//3
         if not ana_args or not ana_args.get('nperseg'):
-            ana_args['nperseg']=len(ts)//3
+            ana_args['nperseg']=len(ts)
+            
         
         # preprocessing
         wa = WaveletAnalysis()
@@ -108,8 +109,8 @@ class SpectralAnalysis(object):
 
         # output result
         res_dict = {
-            'freqs': freqs,
-            'psd' : psd
+            'freqs': np.asarray(freqs),
+            'psd' : np.asarray(psd),
         }
 
         return res_dict
@@ -180,8 +181,8 @@ class SpectralAnalysis(object):
 
         # output result
         res_dict = {
-            'freqs': freqs,
-            'psd': psd,
+            'freqs': np.asarray(freqs),
+            'psd': np.asarray(psd),
         }
 
         return res_dict
@@ -235,8 +236,8 @@ class SpectralAnalysis(object):
 
         # output result
         res_dict = {
-            'freqs': freqs,
-            'psd': psd,
+            'freqs': np.asarray(freqs),
+            'psd': np.asarray(psd),
         }
 
         return res_dict
@@ -305,8 +306,8 @@ class SpectralAnalysis(object):
 
         # output result
         res_dict = {
-            'freqs': freqs,
-            'psd': psd,
+            'freqs': np.asarray(freqs),
+            'psd': np.asarray(psd),
         }
 
         return res_dict
